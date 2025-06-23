@@ -303,9 +303,8 @@ const deleteVideo = asyncHandler(async (req, res) => {
         throw new ApiError(400, "Failed to delete the video please try again");
     }
     
-    // Delete files from cloudinary (optional - implement if you have public_id stored)
-    // await deleteFromCloudinary(video.thumbnail);
-    // await deleteFromCloudinary(video.videoFile);
+    await deleteFromCloudinary(video.thumbnail);
+    await deleteFromCloudinary(video.videoFile);
     
     return res.status(200).json(
         new ApiResponse(200, {}, "Video deleted successfully")
