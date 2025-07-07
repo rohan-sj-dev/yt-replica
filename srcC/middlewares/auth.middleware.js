@@ -26,7 +26,7 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
     }
 });
 
-// Optional authentication - doesn't throw error if no token
+
 export const optionalAuth = asyncHandler(async (req, res, next) => {
     try {
         const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
@@ -42,7 +42,7 @@ export const optionalAuth = asyncHandler(async (req, res, next) => {
         
         next();
     } catch (error) {
-        // Don't throw error for optional auth, just continue without user
+
         next();
     }
 });

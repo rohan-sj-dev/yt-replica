@@ -4,7 +4,7 @@ import mongoose, { Schema } from "mongoose";
 const userSchema = new Schema({
     comment: {
         type: Schema.Types.ObjectId,
-        ref: "Comments",
+        ref: "Comment",
         required: true
     },
     video: {
@@ -25,4 +25,4 @@ const userSchema = new Schema({
 )
 
 
-export const Tweets = mongoose.model("Tweets", userSchema)
+export const Likes = mongoose.model("Likes", userSchema)
